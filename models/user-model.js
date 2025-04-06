@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
 
-    name: {
+    fullname: {
         type: String,
         minlength: 3,
         trim: true,
@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    isAdmin: Boolean,
+
     order: {
         type: Array,
         default: [],

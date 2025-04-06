@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+         <%- includea('./partials/header') %>
+
+         <% if(error.length>0){%> 
+            <div class="absolute top-5 left-1/2 -translate-x-1/2  -translate-y-1/2 p-3 rounded-md bg-red-500"><span class="inline-block mt-1 mb-1 text-white"><%= error%> </span></div>
+        <%} %>
+
+
+    <div class=" w-full h-screen bg-white m-5 p-3 flex justify-center justify-between items-center content-evenly overflow-hidden  gap-35">
+        <div class="absolute top-10 left-35  right-5 p-4 z-50">
+            <h1 class="text-xl font-bold ">Scatch</h1>
+        </div>
+        <div class="flex justify-start">
+        <div class="bg-[#d7dbdf] flex flex-col h-screen w-120 items-center justify-center items-center text-center overflow-hidden  ">
+
+            <h1 class="font- text-3xl text-zinc-900 mr-35">Welcome to <span
+                    class="text-blue-500 font-bold">Scatch</span></h1>
+            <h2 class="text-xl text-zinc-900 mr-55">create your account</h2>
+            <form autocomplete="off" action="/user/register" method="post" class="flex flex-col p-5 items-center text-center w-72">
+                <input class="bg-white text-zinc-900 tracking-tighter w-100 p-3 m-2" type="text" name="fullname"
+                    placeholder="Fullname" required>
+                <input class="bg-white text-zinc-900 tracking-tighter w-100 p-3 m-2" type="email" name="email"
+                    placeholder="Email" required>
+                <input class="bg-white text-zinc-900 tracking-tighter w-100 p-3 m-2" type="password" name="password"
+                    placeholder="Password" required>
+
+                <input class="bg-blue-500 rounded-3xl text-white h-10 w-40 p-2 mr-62 " type="submit" name=""
+                    value="Create my account">
+            </form>
+        </div>
+        </div>
+            
+        <div class="bg-blue-500 rounded-full text-white h-10 w-10 flex items-center justify-center"> <h1>Or</h1></div>
+
+        <div> <form action="" class="flex flex-col items-center w-100">
+            <h2 class="text-2xl  text-zinc-900 mr-30 mr-48">Login your account</h2>
+            <input class="bg-zinc-300 text-zinc-700 tracking-tighter w-72 p-3 m-2 w-100" type="email" name="email"
+                placeholder="Email" required>
+            <input class="bg-zinc-300 text-zinc-700 tracking-tighter w-72 p-3 m-2 w-100" type="password" name="password"
+                placeholder="Password" required>
+
+                
+                <input class="bg-blue-500 rounded-3xl text-white h-10 w-40 p-2 mr-60 " type="submit" name=""
+                    value="Login">
+        </form></div>
+    </div>
+</body>
+
+</html>
