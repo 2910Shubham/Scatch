@@ -13,6 +13,7 @@ const path = require('path');
 const ownersRouter = require('./routes/ownersRouters')
 const productsRouter = require('./routes/productsRouter')
 const usersRouter = require('./routes/userRouters')
+const indexRouter = require('./routes/index');
 
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -24,14 +25,14 @@ app.use(
     expressSession({
         resave: false,
         saveUninitialized: false,
-        secret: process.env.EXPRESS_SESSION_SECRET,
+        secret: process.env.JWT_KEY,
     })
 );
 app.use(flash());
 
 app.use("/", indexRouter)
-app.use("/owners", ownersRouter);
-app.use("/users", usersRouter);
-app.use("/products", productsRouter);
+app.use("/owner", ownersRouter);
+app.use("/user", usersRouter);
+app.use("/product", productsRouter);
 
 app.listen(3000);

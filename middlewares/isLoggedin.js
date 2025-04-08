@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const userModel = require("../models/user-model");
+const ownerModel = require('../models/owner-model');
 
 module.exports = async function ( req,res, next){
 
@@ -9,7 +10,7 @@ module.exports = async function ( req,res, next){
     }
 
     try {
-        let decoded = jwt.veriify(req.cookies.token, process.env.JWT_KEY);
+        let decoded = jwt.verify(req.cookies.token, process.env.JWT_KEY);
         let user = await userModel
         .findOne({email: decoded.email})
         .select("-password");
