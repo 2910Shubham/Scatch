@@ -85,18 +85,21 @@ The application will be available at `http://localhost:3000`
 
 ```
 scatch/
-├── app.js                 # Main application file
-├── config/               # Configuration files
-├── controllers/          # Business logic
-├── middlewares/         # Custom middleware
-├── models/              # Database models
-├── public/              # Static assets
-├── routes/              # Route definitions
-├── utils/               # Utility functions
-├── views/               # EJS templates
-├── .env                 # Environment variables
-├── .gitignore          # Git ignore file
-└── package.json        # Project dependencies
+├── api/                  # API endpoints and serverless functions
+│   └── app.js           # Main application file
+├── config/              # Configuration files
+├── controllers/         # Business logic
+├── middlewares/        # Custom middleware
+├── models/             # Database models
+├── public/             # Static assets
+├── routes/             # Route definitions
+├── utils/              # Utility functions
+├── views/              # EJS templates
+├── .env                # Environment variables
+├── .gitignore         # Git ignore file
+├── package.json       # Project dependencies
+├── package-lock.json  # Dependency lock file
+└── vercel.json        # Vercel deployment configuration
 ```
 
 ## 🔐 API Routes
